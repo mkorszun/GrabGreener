@@ -1,5 +1,7 @@
 package com.greenassitant.metrics;
 
+import android.graphics.Color;
+
 import com.greenassitant.model.BasketItem;
 
 import java.util.List;
@@ -27,6 +29,14 @@ public class CoMetric {
             return colors[1];
         } else {
             return colors[2];
+        }
+    }
+
+    public int colorForItem(BasketItem item) {
+        if (item.isInBasket()) {
+            return colorForLevel((long) item.getScore());
+        } else {
+            return Color.GRAY;
         }
     }
 }

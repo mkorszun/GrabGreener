@@ -58,4 +58,8 @@ public class BasketItem implements Serializable {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    public String getQuantity() {
+        return String.format("%.1f %s", getCount(), getUnit());
+    }
 }

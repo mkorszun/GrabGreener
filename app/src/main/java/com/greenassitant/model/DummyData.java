@@ -5,6 +5,9 @@ import java.util.List;
 
 public class DummyData {
 
+    /**
+     * Dummy data for search
+     */
     public static List<BasketItem> getData() {
         LinkedList<BasketItem> list = new LinkedList<BasketItem>();
         list.add(new BasketItem("Cheese", 9860, 0.4, "kg"));
@@ -18,12 +21,19 @@ public class DummyData {
         return list;
     }
 
+    /**
+     * Dummy search query
+     */
     public static BasketItem getForName(String name) {
+
+        // Search dummy products db
         for (BasketItem i : getData()) {
             if (i.getName().toLowerCase().startsWith(name.toLowerCase())) {
                 return i;
             }
         }
+
+        // If product not found, generate one with random values
         int greenScore = 1 + (int) (Math.random() * 3);
         return new BasketItem(name, greenScore, 0.1, "kg");
     }
