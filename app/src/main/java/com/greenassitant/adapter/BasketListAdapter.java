@@ -2,6 +2,7 @@ package com.greenassitant.adapter;
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,9 +34,14 @@ public class BasketListAdapter extends ArrayAdapter<BasketItem> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.basket_item, parent, false);
 
+        Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/font.otf");
         TextView firstLine = (TextView) rowView.findViewById(R.id.firstLine);
         TextView secondLine = (TextView) rowView.findViewById(R.id.secondLine);
         TextView itemScore = (TextView) rowView.findViewById(R.id.item_score);
+
+        firstLine.setTypeface(custom_font);
+        secondLine.setTypeface(custom_font);
+        itemScore.setTypeface(custom_font);
 
         BasketItem basketItem = items.get(position);
         firstLine.setText(basketItem.getName());

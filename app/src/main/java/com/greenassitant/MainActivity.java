@@ -5,6 +5,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -140,9 +141,12 @@ public class MainActivity extends Activity {
         double coUsageKG = ((double) coUsageG) / 1000;
         double treeUsage = new TreeMetric().calculate(coUsageG);
 
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/font.otf");
         TextView coScore = (TextView) findViewById(R.id.co_score);
         TextView treeScore = (TextView) findViewById(R.id.tree_score);
 
+        coScore.setTypeface(custom_font);
+        treeScore.setTypeface(custom_font);
         coScore.setText(decimalFormat.format(coUsageKG));
         treeScore.setText(decimalFormat.format(treeUsage));
     }
