@@ -1,4 +1,4 @@
-#GrabGreener ![app/src/main/res/drawable-hdpi/tree.png](app/src/main/res/drawable-hdpi/tree.png)
-Grab Grenner is a smartphone App that is an intelligent shopping list
-which tells you how much carbon emissions your shopping actually costs
-the planet in its production and supply chain.
+#GrabGreener - Inspiring green choices ![app/src/main/res/drawable-hdpi/tree.png](app/src/main/res/drawable-hdpi/tree.png)
+
+GrabGreener is an intelligent shopping list app
+which tells you how much carbon emissions your shopping generates during its supply chain. To install the application, simply download `apk/GrabGreener.apk` to your android phone.
