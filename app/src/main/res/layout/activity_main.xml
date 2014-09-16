@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/tree_score"
-                android:src="@drawable/tree" />
+                android:src="@drawable/tree_bottom" />
 
             <ImageView
                 android:id="@+id/green_image"
@@ -60,7 +60,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="15dp"
-                android:src="@drawable/kilograms"
+                android:src="@drawable/kilograms_co2"
                 android:layout_alignBottom="@+id/tree_image" />
 
             <TextView
