@@ -12,7 +12,7 @@ public class TreeLimitDialog {
     private boolean fiveShown;
 
     public void show(Context context, double treeUsage) {
-        if (treeUsage > 1 && treeUsage < 5 && !isOneShown()) {
+        if (treeUsage >= 1 && treeUsage < 5 && !isOneShown()) {
             show(context, context.getResources().getString(R.string.one_tree_usage_msg),
                     context.getResources().getString(R.string.one_tree_dialog_confirmation), false);
             setOneShown(true);
