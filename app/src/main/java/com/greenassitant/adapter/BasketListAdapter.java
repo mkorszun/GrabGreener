@@ -45,8 +45,8 @@ public class BasketListAdapter extends ArrayAdapter<BasketItem> {
         itemScore.setTypeface(custom_font);
 
         BasketItem basketItem = items.get(position);
-        firstLine.setText(basketItem.getName());
-        secondLine.setText(basketItem.getQuantity());
+        firstLine.setText(basketItem.getName().toUpperCase());
+        secondLine.setText(basketItem.getQuantity().toUpperCase());
         itemScore.setText(Long.toString(coMetric.calculate(basketItem)));
 
         if (basketItem.isInBasket()) {
