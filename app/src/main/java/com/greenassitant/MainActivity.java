@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.greenassitant.adapter.BasketItemComparator;
 import com.greenassitant.adapter.BasketListAdapter;
 import com.greenassitant.dialogs.QuantityPicker;
 import com.greenassitant.dialogs.TreeLimitDialog;
@@ -97,6 +98,10 @@ public class MainActivity extends Activity {
                     item.setInBasket(true);
                     view.setBackgroundColor(coMetric.colorForItem(item));
                 }
+
+                // resort elements
+                adapter.sort(new BasketItemComparator());
+                adapter.notifyDataSetChanged();
             }
         });
 

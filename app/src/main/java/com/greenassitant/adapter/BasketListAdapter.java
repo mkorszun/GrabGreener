@@ -13,6 +13,7 @@ import com.greenassitant.R;
 import com.greenassitant.metrics.CoMetric;
 import com.greenassitant.model.BasketItem;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class BasketListAdapter extends ArrayAdapter<BasketItem> {
