@@ -18,6 +18,29 @@ public class DummyData {
         list.add(new BasketItem("Flour", 730, 1.0, "kg"));
         list.add(new BasketItem("Chicken", 3760, 0.5, "kg"));
         list.add(new BasketItem("Potatoes", 310, 1.0, "kg"));
+        list.add(new BasketItem("Milk", 4000, 0.4, "kg"));
+        list.add(new BasketItem("Eggs", 2300, 0.4, "kg"));
+        list.add(new BasketItem("Yogurt", 5000, 0.5, "kg"));
+        list.add(new BasketItem("Bananas", 6600, 1.0, "kg"));
+        list.add(new BasketItem("Peach", 5000, 1.0, "kg"));
+        list.add(new BasketItem("Pork", 5700, 0.5, "kg"));
+        list.add(new BasketItem("Beans", 9860, 0.4, "kg"));
+        list.add(new BasketItem("Tomato", 2600, 1.0, "kg"));
+        list.add(new BasketItem("Turkey", 5800, 0.4, "kg"));
+        list.add(new BasketItem("Orange", 4500, 1.0, "kg"));
+        list.add(new BasketItem("Grapes", 4400, 1.0, "kg"));
+        list.add(new BasketItem("Broccoli", 5000, 1.0, "kg"));
+        list.add(new BasketItem("Lettuce", 2300, 1.0, "kg"));
+        list.add(new BasketItem("Shrimp", 7300, 1.0, "kg"));
+        list.add(new BasketItem("Rice", 3100, 1.0, "kg"));
+        list.add(new BasketItem("Almonds", 2250, 0.5, "kg"));
+        list.add(new BasketItem("Peanuts", 1240, 0.5, "kg"));
+        list.add(new BasketItem("Vegetable Oil", 1750, 1.0, "kg"));
+        list.add(new BasketItem("Butter", 1370, 1.0, "kg"));
+        list.add(new BasketItem("Tuna", 4300, 0.5, "kg"));
+        list.add(new BasketItem("Strawberry", 3000, 0.5, "kg"));
+        list.add(new BasketItem("Cabbage", 2600, 1.0, "kg"));
+        list.add(new BasketItem("Carrot", 3100, 1.0, "kg"));
         return list;
     }
 
