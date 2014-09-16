@@ -1,14 +1,13 @@
 package com.greenassitant.metrics;
 
-import android.graphics.Color;
-
 import com.greenassitant.model.BasketItem;
 
 import java.util.List;
 
 public class CoMetric {
 
-    private int[] colors = new int[]{0xff8ec343, 0xffffac34, 0xfff75e25};
+    private int[] COLORS = new int[]{0xff8ec343, 0xffffac34, 0xfff75e25};
+    private int[] COLORS_REMOVED = new int[]{0xff63882f, 0xffb27824, 0xffab4300};
 
     public long calculate(List<BasketItem> items) {
         long score = 0;
@@ -22,7 +21,7 @@ public class CoMetric {
         return (long) (item.getScore() * item.getCount());
     }
 
-    public int colorForLevel(long score) {
+    public int colorForLevel(long score, int[] colors) {
         if (score < 1000) {
             return colors[0];
         } else if (score > 1000 && score < 5000) {
@@ -34,9 +33,9 @@ public class CoMetric {
 
     public int colorForItem(BasketItem item) {
         if (item.isInBasket()) {
-            return colorForLevel((long) item.getScore());
+            return colorForLevel((long) item.getScore(), COLORS);
         } else {
-            return Color.GRAY;
+            return colorForLevel((long) item.getScore(), COLORS_REMOVED);
         }
     }
 }
