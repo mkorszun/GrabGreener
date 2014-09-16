@@ -12,7 +12,7 @@ public class DummyData {
         LinkedList<BasketItem> list = new LinkedList<BasketItem>();
         list.add(new BasketItem("Cheese", 9860, 0.4, "kg"));
         list.add(new BasketItem("Peas", 930, 0.5, "kg"));
-        list.add(new BasketItem("Salmon", 5015, 0.5, "kg"));
+        list.add(new BasketItem("Salmon", 15015, 0.5, "kg"));
         list.add(new BasketItem("Apples", 200, 1.0, "kg"));
         list.add(new BasketItem("Beef", 16230, 0.5, "kg"));
         list.add(new BasketItem("Flour", 730, 1.0, "kg"));
@@ -31,7 +31,7 @@ public class DummyData {
         list.add(new BasketItem("Grapes", 4400, 1.0, "kg"));
         list.add(new BasketItem("Broccoli", 500, 1.0, "kg"));
         list.add(new BasketItem("Lettuce", 230, 1.0, "kg"));
-        list.add(new BasketItem("Shrimp", 7300, 1.0, "kg"));
+        list.add(new BasketItem("Shrimp", 17300, 1.0, "kg"));
         list.add(new BasketItem("Rice", 310, 1.0, "kg"));
         list.add(new BasketItem("Almonds", 2250, 0.5, "kg"));
         list.add(new BasketItem("Peanuts", 1240, 0.5, "kg"));
