@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.greenassitant.adapter.BasketListAdapter;
 import com.greenassitant.dialogs.QuantityPicker;
+import com.greenassitant.dialogs.TreeLimitDialog;
 import com.greenassitant.listeners.SwipeDismissListViewTouchListener;
 import com.greenassitant.metrics.CoMetric;
 import com.greenassitant.metrics.TreeMetric;
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
     private List<BasketItem> items = new ArrayList<BasketItem>();
     private DecimalFormat decimalFormat = new DecimalFormat("##.##");
     private CoMetric coMetric = new CoMetric();
+    private TreeLimitDialog treeDialog = new TreeLimitDialog();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,5 +151,6 @@ public class MainActivity extends Activity {
         treeScore.setTypeface(custom_font);
         coScore.setText(decimalFormat.format(coUsageKG));
         treeScore.setText(decimalFormat.format(treeUsage));
+        treeDialog.show(this, treeUsage);
     }
 }
