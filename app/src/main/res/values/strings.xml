@@ -7,6 +7,7 @@
 
     <string name="one_tree_usage_msg">The carbon footprint of your shopping so far takes one tree to compensate.</string>
     <string name="five_tree_usage_msg">The carbon footprint of your shopping so far takes five trees to compensate.</string>
+    <string name="thank_you">Thank you! Five trees will be planted! Feel free to brag about it :)</string>
 
     <string name="one_tree_dialog_confirmation">Got it</string>
     <string name="five_tree_dialog_confirmation">Balance now</string>
