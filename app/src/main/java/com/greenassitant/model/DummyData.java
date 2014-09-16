@@ -41,6 +41,7 @@ public class DummyData {
         list.add(new BasketItem("Strawberry", 3000, 0.5, "kg"));
         list.add(new BasketItem("Cabbage", 2600, 1.0, "kg"));
         list.add(new BasketItem("Carrot", 3100, 1.0, "kg"));
+        list.add(new BasketItem("Kobe Beef", 800000, 1.0, "kg"));
         return list;
     }
 
