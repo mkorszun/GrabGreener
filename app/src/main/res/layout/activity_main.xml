@@ -38,7 +38,7 @@
                 android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ff8ec343"
-                android:textSize="50dp" />
+                android:textSize="45dp" />
 
             <ImageView
                 android:id="@+id/tree_image"
@@ -68,7 +68,7 @@
                 android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ff8ec343"
-                android:textSize="50dp" />
+                android:textSize="45dp" />
 
         </RelativeLayout>
 
