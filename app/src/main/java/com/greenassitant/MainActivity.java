@@ -2,17 +2,19 @@ package com.greenassitant;
 
 import android.app.Activity;
 import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.TextView;
+import android.view.inputmethod.EditorInfo;
+import android.view.KeyEvent;
+import android.widget.Toast;
 
 import com.greenassitant.adapter.BasketItemComparator;
 import com.greenassitant.adapter.BasketListAdapter;
@@ -28,16 +30,20 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.greenassitant.model.ProductData;
+
 
 public class MainActivity extends Activity {
 
     public static final String CLICK_TO_ADD_ITEM = "Click to add item";
 
-    private SearchView searchView;
-    private ListView listView;
-    private BasketListAdapter adapter;
+    private AutoCompleteTextView textViewAutoComplete;
+    private ArrayAdapter<String> autoCompleteAdapter;
 
+    private ListView listView;
+    private BasketListAdapter basketListAdapter;
     private List<BasketItem> items = new ArrayList<BasketItem>();
+
     private DecimalFormat decimalFormat = new DecimalFormat("##.##");
     private CoMetric coMetric = new CoMetric();
     private TreeLimitDialog treeDialog = new TreeLimitDialog();
@@ -48,10 +54,46 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView) findViewById(R.id.listView);
-        adapter = new BasketListAdapter(getApplicationContext(), R.layout.basket_item, items);
+        String[] productNames_list = ProductData.getNamesByRegex("", getApplicationContext());
+        autoCompleteAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,productNames_list);
+        textViewAutoComplete = (AutoCompleteTextView) findViewById(R.id.autoComplete);
 
-        listView.setAdapter(adapter);
+        // set basketListAdapter for the auto complete fields
+        textViewAutoComplete.setAdapter(autoCompleteAdapter);
+
+        // specify the minimum type of characters before drop-down list is shown
+        textViewAutoComplete.setThreshold(1);
+
+        textViewAutoComplete.setThreshold(1);
+
+        TextView.OnEditorActionListener exampleListener = new TextView.OnEditorActionListener(){
+            public boolean onEditorAction(TextView exampleView, int actionId, KeyEvent event) {
+                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER
+                        && event.getAction() == KeyEvent.ACTION_DOWN) {
+                        basketListAdapter.add(ProductData.getByName(String.valueOf(exampleView.getText()), getApplicationContext()));
+                        textViewAutoComplete.setText("",false);
+                        calculateScore();
+                }
+                return true;
+            }
+        };
+
+        textViewAutoComplete.setOnEditorActionListener(exampleListener);
+
+        textViewAutoComplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View arg1, int itemIndex,
+                                    long arg3) {
+            basketListAdapter.add(ProductData.getByName(String.valueOf(adapterView.getItemAtPosition(itemIndex)), getApplicationContext()));
+            textViewAutoComplete.setText("",false);
+            calculateScore();
+            }
+        });
+
+        listView = (ListView) findViewById(R.id.listView);
+        basketListAdapter = new BasketListAdapter(getApplicationContext(), R.layout.basket_item, items);
+
+        listView.setAdapter(basketListAdapter);
         setListListeners();
         calculateScore();
     }
@@ -60,23 +102,9 @@ public class MainActivity extends Activity {
     protected void onNewIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            adapter.add(DummyData.getForName(query));
-            searchView.setQuery("", false);
+            basketListAdapter.add(DummyData.getForName(query));
             calculateScore();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
-        searchView.setQueryHint(CLICK_TO_ADD_ITEM);
-        searchView.setIconifiedByDefault(false);
-        searchView.setIconified(true);
-        return true;
     }
 
     private void setListListeners() {
@@ -86,7 +114,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
 
                 View rowView = listView.getChildAt(position);
-                BasketItem item = adapter.getItem(position);
+                BasketItem item = basketListAdapter.getItem(position);
                 TextView textView = (TextView) rowView.findViewById(R.id.firstLine);
 
                 if (item.isInBasket()) {
@@ -100,8 +128,8 @@ public class MainActivity extends Activity {
                 }
 
                 // resort elements
-                adapter.sort(new BasketItemComparator());
-                adapter.notifyDataSetChanged();
+                basketListAdapter.sort(new BasketItemComparator());
+                basketListAdapter.notifyDataSetChanged();
             }
         });
 
@@ -115,10 +143,10 @@ public class MainActivity extends Activity {
                     @Override
                     public void onDismiss(ListView listView, int[] reverseSortedPositions) {
                         for (int position : reverseSortedPositions) {
-                            adapter.remove(adapter.getItem(position));
+                            basketListAdapter.remove(basketListAdapter.getItem(position));
                             calculateScore();
                         }
-                        adapter.notifyDataSetChanged();
+                        basketListAdapter.notifyDataSetChanged();
                     }
                 }));
 
@@ -135,9 +163,9 @@ public class MainActivity extends Activity {
         new QuantityPicker(this, new QuantityPicker.QuantityListener() {
             @Override
             public void selected(double value) {
-                BasketItem item = adapter.getItem(position);
+                BasketItem item = basketListAdapter.getItem(position);
                 item.setCount(value);
-                adapter.notifyDataSetChanged();
+                basketListAdapter.notifyDataSetChanged();
                 calculateScore();
             }
         }).show();

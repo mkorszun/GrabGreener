@@ -1,0 +1,194 @@
+[
+    {
+        "name" : "Cheese",
+        "co2" : 9860,
+        "amount" : 0.4,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Peas",
+        "co2" : 930,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Salmon",
+        "co2" : 15015,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Apples",
+        "co2" : 200,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Beef",
+        "co2" : 16230,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Flour",
+        "co2" : 730,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Chicken",
+        "co2" : 3760,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Potatoes",
+        "co2" : 310,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Milk",
+        "co2" : 1010,
+        "amount" : 0.4,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Eggs",
+        "co2" : 2300,
+        "amount" : 0.4,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Yoghurt",
+        "co2" : 1020,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Bananas",
+        "co2" : 660,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Peach",
+        "co2" : 500,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Pork",
+        "co2" : 5700,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Beans",
+        "co2" : 980,
+        "amount" : 0.4,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Tomatoes",
+        "co2" : 260,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Turkey",
+        "co2" : 4800,
+        "amount" : 0.4,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Orange",
+        "co2" : 450,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Grapes",
+        "co2" : 4400,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Broccoli",
+        "co2" : 500,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Lettuce",
+        "co2" : 230,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Shrimp",
+        "co2" : 17300,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Rice",
+        "co2" : 310,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Almonds",
+        "co2" : 2250,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Peanuts",
+        "co2" : 1240,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Vegetable Oil",
+        "co2" : 1750,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Butter",
+        "co2" : 1370,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Tuna",
+        "co2" : 4300,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Strawberry",
+        "co2" : 3000,
+        "amount" : 0.5,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Carrot",
+        "co2" : 3100,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Cabbage",
+        "co2" : 2600,
+        "amount" : 1,
+        "unit" : "kg"
+    },
+    {
+        "name" : "Kobe Beef",
+        "co2" : 80000,
+        "amount" : 1,
+        "unit" : "kg"
+    }
+]
