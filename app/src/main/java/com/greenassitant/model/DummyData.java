@@ -13,7 +13,7 @@ public class DummyData {
         list.add(new BasketItem("Cheese", 9860, 0.4, "kg"));
         list.add(new BasketItem("Peas", 930, 0.5, "kg"));
         list.add(new BasketItem("Salmon", 15015, 0.5, "kg"));
-        list.add(new BasketItem("Apples", 200, 1.0, "kg"));
+        list.add(new BasketItem("Apples", 700, 1.0, "kg"));
         list.add(new BasketItem("Beef", 16230, 0.5, "kg"));
         list.add(new BasketItem("Flour", 730, 1.0, "kg"));
         list.add(new BasketItem("Chicken", 3760, 0.5, "kg"));
